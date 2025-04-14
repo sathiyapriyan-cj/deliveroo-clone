@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
+import Categories from 'components/Categories';
 import * as React from 'react';
-import { SafeAreaView, View, Text, Image, TextInput, ScrollView } from 'react-native';
+import { SafeAreaView, View, Text, Image, TextInput, ScrollView, Platform } from 'react-native';
 import {
   ChevronDownIcon,
   UserIcon,
@@ -18,12 +19,13 @@ export function HomeScreen() {
   }, [navigation]);
 
   return (
-    <SafeAreaView className="bg-white pt-5">
+    <SafeAreaView className="flex-1 bg-white pt-5">
       {/* Header */}
       <View className="mx-4 flex-row items-center space-x-2 pb-3">
         <Image
           source={{ uri: 'https://links.papareact.com/wru' }}
           className="h-7 w-7 rounded-full bg-gray-300"
+          resizeMode="cover"
         />
         <View className="flex-1">
           <Text className="text-xs font-bold text-gray-400">Deliver Now!</Text>
@@ -42,16 +44,21 @@ export function HomeScreen() {
           <TextInput
             placeholder="Search for services or categories..."
             keyboardType="default"
-            className="flex-1 pl-4"
+            className="flex-1 pl-2"
+            placeholderTextColor="gray"
+            style={{ paddingVertical: Platform.OS === 'web' ? 10 : 0 }}
           />
         </View>
         <AdjustmentsVerticalIcon color="#00ccbb" />
       </View>
 
-      {/* Scroll View  */}
-      <ScrollView>
-        {/* Categories  */}
-        {/* Features  */}
+      {/* Scroll View */}
+      <ScrollView
+        className="bg-gray-100"
+        contentContainerStyle={{ paddingBottom: 100 }}
+        showsVerticalScrollIndicator={false}>
+        {/* Categories */}
+        <Categories />
       </ScrollView>
     </SafeAreaView>
   );

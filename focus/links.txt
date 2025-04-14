@@ -1,1 +1,4 @@
-nativewind
+1. nativewind
+2. navigation
+3. heroicons
+4. 
