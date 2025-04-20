@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import Categories from 'components/Categories';
+import FeaturedRow from 'components/FeaturedRow';
 import * as React from 'react';
 import { SafeAreaView, View, Text, Image, TextInput, ScrollView, Platform } from 'react-native';
 import {
@@ -59,6 +60,24 @@ export function HomeScreen() {
         showsVerticalScrollIndicator={false}>
         {/* Categories */}
         <Categories />
+
+        {/* Feature row  */}
+        {/* Featured */}
+        <FeaturedRow id="123" title="Featured" description="Paid placements from our partners" />
+
+        {/* Tasty Discounts */}
+        <FeaturedRow
+          id="1234"
+          title="Tasty Discounts"
+          description="Everyone's been enjoying these juicy discounts!"
+        />
+
+        {/* Offers near you */}
+        <FeaturedRow
+          id="1235"
+          title="Offers near you!"
+          description="Why not support your local restaurant tonight!"
+        />
       </ScrollView>
     </SafeAreaView>
   );
