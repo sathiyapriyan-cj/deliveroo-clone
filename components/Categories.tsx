@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/order
 import { View, Text, ScrollView } from 'react-native';
 import CategoryCard from './CategoryCard';
 
